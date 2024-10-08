@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Topic Modeling on Justus&#39; Seite</title>
+    <link>/de/tags/topic-modeling/</link>
+    <description>Recent content in Topic Modeling on Justus&#39; Seite</description>
+    <generator>Hugo -- 0.132.2</generator>
+    <language>de-DE</language>
+    <lastBuildDate>Sat, 17 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/de/tags/topic-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Topic Modeling: Eine Fallstudie zu Unterschieden in der Nachrichtenberichterstattung</title>
+      <link>/de/posts/media_bias_example/</link>
+      <pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>/de/posts/media_bias_example/</guid>
+      <description>Der 2022 Qatar World Cup war mehr als nur ein sportliches Spektakel; er entfachte eine globale Diskussion über Sport, Politik und Kultur. Um zu verstehen, wie verschiedene Medien dieses Ereignis darstellten, begeben wir uns auf eine faszinierende Reise durch Tausende von Artikeln, die zwischen 2010 und 2023 im Guardian und Al Jazeera veröffentlicht wurden. Unser Werkzeugkasten ist voll mit vielen Analysemethoden, aber heute konzentrieren wir uns auf die Welt der Topic Modeling.</description>
+    </item>
+  </channel>
+</rss>

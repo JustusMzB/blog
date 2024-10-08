@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Topic Modeling: Eine Fallstudie zu Unterschieden in der Nachrichtenberichterstattung | Justus&#39; Seite</title>
+<meta name="keywords" content="media bias, Qatar World Cup, data analysis, data visualization, Topic Modeling">
+<meta name="description" content="Der 2022 Qatar World Cup war mehr als nur ein sportliches Spektakel; er entfachte eine globale Diskussion über Sport, Politik und Kultur. Um zu verstehen, wie verschiedene Medien dieses Ereignis darstellten, begeben wir uns auf eine faszinierende Reise durch Tausende von Artikeln, die zwischen 2010 und 2023 im Guardian und Al Jazeera veröffentlicht wurden. Unser Werkzeugkasten ist voll mit vielen Analysemethoden, aber heute konzentrieren wir uns auf die Welt der Topic Modeling.">
+<meta name="author" content="Justus Meyer zu Bexten, Oliver Perle, Tarek Nassri">
+<link rel="canonical" href="/de/posts/media_bias_example/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="de" href="/de/posts/media_bias_example/">
+<link rel="alternate" hreflang="en" href="/posts/media_bias_example/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="Topic Modeling: Eine Fallstudie zu Unterschieden in der Nachrichtenberichterstattung" />
+<meta property="og:description" content="Der 2022 Qatar World Cup war mehr als nur ein sportliches Spektakel; er entfachte eine globale Diskussion über Sport, Politik und Kultur. Um zu verstehen, wie verschiedene Medien dieses Ereignis darstellten, begeben wir uns auf eine faszinierende Reise durch Tausende von Artikeln, die zwischen 2010 und 2023 im Guardian und Al Jazeera veröffentlicht wurden. Unser Werkzeugkasten ist voll mit vielen Analysemethoden, aber heute konzentrieren wir uns auf die Welt der Topic Modeling." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/de/posts/media_bias_example/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-08-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-08-17T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Topic Modeling: Eine Fallstudie zu Unterschieden in der Nachrichtenberichterstattung"/>
+<meta name="twitter:description" content="Der 2022 Qatar World Cup war mehr als nur ein sportliches Spektakel; er entfachte eine globale Diskussion über Sport, Politik und Kultur. Um zu verstehen, wie verschiedene Medien dieses Ereignis darstellten, begeben wir uns auf eine faszinierende Reise durch Tausende von Artikeln, die zwischen 2010 und 2023 im Guardian und Al Jazeera veröffentlicht wurden. Unser Werkzeugkasten ist voll mit vielen Analysemethoden, aber heute konzentrieren wir uns auf die Welt der Topic Modeling."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Topic Modeling: Eine Fallstudie zu Unterschieden in der Nachrichtenberichterstattung",
+      "item": "/de/posts/media_bias_example/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Topic Modeling: Eine Fallstudie zu Unterschieden in der Nachrichtenberichterstattung",
+  "name": "Topic Modeling: Eine Fallstudie zu Unterschieden in der Nachrichtenberichterstattung",
+  "description": "Der 2022 Qatar World Cup war mehr als nur ein sportliches Spektakel; er entfachte eine globale Diskussion über Sport, Politik und Kultur. Um zu verstehen, wie verschiedene Medien dieses Ereignis darstellten, begeben wir uns auf eine faszinierende Reise durch Tausende von Artikeln, die zwischen 2010 und 2023 im Guardian und Al Jazeera veröffentlicht wurden. Unser Werkzeugkasten ist voll mit vielen Analysemethoden, aber heute konzentrieren wir uns auf die Welt der Topic Modeling.",
+  "keywords": [
+    "media bias", "Qatar World Cup", "data analysis", "data visualization", "Topic Modeling"
+  ],
+  "articleBody": "Der 2022 Qatar World Cup war mehr als nur ein sportliches Spektakel; er entfachte eine globale Diskussion über Sport, Politik und Kultur. Um zu verstehen, wie verschiedene Medien dieses Ereignis darstellten, begeben wir uns auf eine faszinierende Reise durch Tausende von Artikeln, die zwischen 2010 und 2023 im Guardian und Al Jazeera veröffentlicht wurden. Unser Werkzeugkasten ist voll mit vielen Analysemethoden, aber heute konzentrieren wir uns auf die Welt der Topic Modeling.\nSchlüsselthemen in Tausenden von Artikeln finden Topic Modeling ist eine Text-Mining-Methode, die versteckte Muster und Themen in einer riesigen Sammlung von Dokumenten aufdeckt. Sie verwendet statistische Algorithmen, um Gruppen von Wörtern (oder “Themen”) zu identifizieren, die häufig zusammen auftreten, unter der Annahme, dass sie ein Thema oder einen Themenbereich charakterisieren.\nDas ist so wie ein Bibliothekar, der nicht wirklich weiß, worum es in den Büchern geht: Um Themen zu finden, gruppiert er Bücher zusammen, die wichtige Wörter untereinander teilen. Am Ende behandelt jede Gruppe von Büchern wahrscheinlich ein ähnliches Thema, obwohl der Bibliothekar nicht weiß, was das Thema ist oder genau bedeutet.\nErkenntnisse der Topic Modeling: Das Ergebnis der Topic Modeling sind Themen, die durch ihre signifikanten Wörter charakterisiert sind. Es bleibt dem Menschen überlassen, zu interpretieren, was diese Wortgruppen wahrscheinlich bedeuten.\nSchauen wir uns einige der Themen an, die wir in den Guardian- und Al Jazeera-Artikeln über die Fußballweltmeisterschaft in Katar gefunden haben:\nblatter, bid, vote, ethic_commitee: Dieses Thema scheint sich um den FIFA-Korruptionsskandal und die anschließenden Ermittlungen zu drehen.\nworker, wage, amnesty: Dieses Thema deckt wahrscheinlich die Fragen der Arbeitnehmerrechte und -bedingungen in Katar ab.\npower, sense, sportswashing: Dieses Thema könnte sich auf das Konzept des “Sportswashing” beziehen, bei dem Länder Sportveranstaltungen nutzen, um ihr Image zu verbessern.\nbribe investigation, charge, warner: Dieses Thema könnte sich mit den Gerichtsverfahren und Korruptionsvorwürfen gegen FIFA-Funktionäre befassen.\nwoman, gay, armband, lgbtq: Dieses Thema scheint sich auf LGBTQ-Themen und Menschenrechtsfragen im Zusammenhang mit der Weltmeisterschaft zu konzentrieren.\nEs gibt viele andere Themen (wir haben uns entschieden, 20 Gruppen zu erstellen), dies sind diejenigen, die für uns von besonderem Interesse waren. Das wichtigste andere Thema ist wahrscheinlich das über die eigentlichen Sportereignisse und den Verlauf des Turniers (group, group_stage, knockout_stage, playoff), aber wir haben uns entschieden, uns auf die kontroverseren Themen zu konzentrieren.\nDie Topic Modeling ermöglicht es uns auch, jeden Artikel einem der von uns gefundenen Themen zuzuordnen, was uns ein wertvolles Instrument zur Analyse von Nachrichtenbias bietet!\nNachrichtenbias: Welches Thema erhält Aufmerksamkeit? Themen im Zeitverlauf im Guardian\nThemen im Zeitverlauf in Al Jazeera\nHier sehen wir, welcher Prozentsatz der Artikel jedes Jahr (mit dem allgemeinen Thema “Fußballweltmeisterschaft Katar”) den fünf beschriebenen Themen zugeordnet wurde.\nEin wesentlicher Unterschied ist die Intensität und Langlebigkeit des Themas Korruption (blatter, bid, vote, ethic_commitee) im Guardian im Vergleich zu Al Jazeera. Wir könnten interpretieren, dass das Thema von den Redakteuren von Al Jazeera als weniger berichtenswert erachtet wurde.\nEine wichtige Ähnlichkeit ist die Langlebigkeit und Intensität des Themas Arbeitnehmerrechte (worker, wage, amnesty) in beiden Zeitungen. Dies könnte darauf hindeuten, dass das Thema von beiden Zeitungen als wichtig erachtet wurde.\nWährend kleinere Themen im Guardian häufiger auftauchen, liegt dies einfach an der höheren Anzahl von Artikeln im Guardian im Vergleich zu Al Jazeera. Wir können jedoch auch beobachten, dass der Guardian vor der Durchführung der Weltmeisterschaft viel mehr berichtet hat, während Al Jazeera während der Veranstaltung mehr zu berichten begann.\nFazit Topic Modeling ist ein leistungsstarkes Werkzeug, um versteckte Muster und Themen in großen Textdatensätzen aufzudecken. Durch die Anwendung dieser Methode auf Nachrichtenartikel aus dem Guardian und Al Jazeera über die Fußballweltmeisterschaft in Katar haben wir wertvolle Einblicke in die Unterschiede in der Berichterstattung zwischen diesen beiden Medien gewonnen. Die Analyse zeigte Unterschiede in der Aufmerksamkeit, die verschiedenen Themen gewidmet wurde, und hob potenzielle Verzerrungen in der Nachrichtenberichterstattung hervor. Es gibt noch viele weitere Erkenntnisse zu gewinnen, zum Beispiel durch die Analyse des Tons der in den Artikeln verwendeten Sprache… Aber das ist eine Geschichte für einen anderen Tag!\nEin anderer Bereich in dem Topic Modeling zum einsatz kommen kann ist zum Beispiel die Analyse von Produktrezensionen, wo ohne das lesen von tausenden von Rezensionen ein Überblick über die wichtigsten Themen und Meinungen gewonnen werden kann.\nDanksagung Diese Ergebnisse sind ein kleiner Teil eines Projekts, das an der Universität Leipzig zusammen mit Oliver Perle und Tarek Nassri durchgeführt wurde. Ich möchte ihnen für die nette Zusammenarbeit danken!\n",
+  "wordCount" : "722",
+  "inLanguage": "de",
+  "datePublished": "2024-08-17T00:00:00Z",
+  "dateModified": "2024-08-17T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Justus Meyer zu Bexten, Oliver Perle, Tarek Nassri"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/de/posts/media_bias_example/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Justus' Seite",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/assets/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/de/" accesskey="h" title="Justus&#39; Seite (Alt + H)">Justus&#39; Seite</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="/" title="English"
+                            aria-label="English">En</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Topic Modeling: Eine Fallstudie zu Unterschieden in der Nachrichtenberichterstattung
+    </h1>
+    <div class="post-meta"><span title='2024-08-17 00:00:00 +0000 UTC'>August 17, 2024</span>&nbsp;·&nbsp;Justus Meyer zu Bexten, Oliver Perle, Tarek Nassri&nbsp;|&nbsp;Übersetzungen:
+<ul class="i18n_list">
+    <li>
+        <a href="/posts/media_bias_example/">En</a>
+    </li>
+</ul>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Der 2022 Qatar World Cup war mehr als nur ein sportliches Spektakel; er entfachte eine globale Diskussion über Sport, Politik und Kultur. Um zu verstehen, wie verschiedene Medien dieses Ereignis darstellten, begeben wir uns auf eine faszinierende Reise durch Tausende von Artikeln, die zwischen 2010 und 2023 im Guardian und Al Jazeera veröffentlicht wurden. Unser Werkzeugkasten ist voll mit vielen Analysemethoden, aber heute konzentrieren wir uns auf die Welt der Topic Modeling.</p>
+<h2 id="schlüsselthemen-in-tausenden-von-artikeln-finden">Schlüsselthemen in Tausenden von Artikeln finden<a hidden class="anchor" aria-hidden="true" href="#schlüsselthemen-in-tausenden-von-artikeln-finden">#</a></h2>
+<p>Topic Modeling ist eine Text-Mining-Methode, die versteckte Muster und Themen in einer riesigen Sammlung von Dokumenten aufdeckt. Sie verwendet statistische Algorithmen, um Gruppen von Wörtern (oder &ldquo;Themen&rdquo;) zu identifizieren, die häufig zusammen auftreten, unter der Annahme, dass sie ein Thema oder einen Themenbereich charakterisieren.</p>
+<p>Das ist so wie ein Bibliothekar, der nicht wirklich weiß, worum es in den Büchern geht: Um Themen zu finden, gruppiert er Bücher zusammen, die wichtige Wörter untereinander teilen. Am Ende behandelt jede Gruppe von Büchern wahrscheinlich ein ähnliches Thema, obwohl der Bibliothekar nicht weiß, was das Thema ist oder genau bedeutet.</p>
+<h2 id="erkenntnisse-der-topic-modeling">Erkenntnisse der Topic Modeling:<a hidden class="anchor" aria-hidden="true" href="#erkenntnisse-der-topic-modeling">#</a></h2>
+<p>Das Ergebnis der Topic Modeling sind Themen, die durch ihre signifikanten Wörter charakterisiert sind. Es bleibt dem Menschen überlassen, zu interpretieren, was diese Wortgruppen wahrscheinlich bedeuten.</p>
+<p>Schauen wir uns einige der Themen an, die wir in den Guardian- und Al Jazeera-Artikeln über die Fußballweltmeisterschaft in Katar gefunden haben:</p>
+<blockquote>
+<p><strong>blatter, bid, vote, ethic_commitee:</strong> Dieses Thema scheint sich um den FIFA-Korruptionsskandal und die anschließenden Ermittlungen zu drehen.</p>
+</blockquote>
+<blockquote>
+<p><strong>worker, wage, amnesty:</strong> Dieses Thema deckt wahrscheinlich die Fragen der Arbeitnehmerrechte und -bedingungen in Katar ab.</p>
+</blockquote>
+<blockquote>
+<p><strong>power, sense, sportswashing:</strong> Dieses Thema könnte sich auf das Konzept des &ldquo;Sportswashing&rdquo; beziehen, bei dem Länder Sportveranstaltungen nutzen, um ihr Image zu verbessern.</p>
+</blockquote>
+<blockquote>
+<p><strong>bribe investigation, charge, warner:</strong> Dieses Thema könnte sich mit den Gerichtsverfahren und Korruptionsvorwürfen gegen FIFA-Funktionäre befassen.</p>
+</blockquote>
+<blockquote>
+<p><strong>woman, gay, armband, lgbtq:</strong> Dieses Thema scheint sich auf LGBTQ-Themen und Menschenrechtsfragen im Zusammenhang mit der Weltmeisterschaft zu konzentrieren.</p>
+</blockquote>
+<p>Es gibt viele andere Themen (wir haben uns entschieden, 20 Gruppen zu erstellen), dies sind diejenigen, die für uns von besonderem Interesse waren. Das wichtigste andere Thema ist wahrscheinlich das über die eigentlichen Sportereignisse und den Verlauf des Turniers (<strong>group, group_stage, knockout_stage, playoff</strong>), aber wir haben uns entschieden, uns auf die kontroverseren Themen zu konzentrieren.</p>
+<p>Die Topic Modeling ermöglicht es uns auch, jeden Artikel einem der von uns gefundenen Themen zuzuordnen, was uns ein wertvolles Instrument zur Analyse von Nachrichtenbias bietet!</p>
+<h2 id="nachrichtenbias-welches-thema-erhält-aufmerksamkeit">Nachrichtenbias: Welches Thema erhält Aufmerksamkeit?<a hidden class="anchor" aria-hidden="true" href="#nachrichtenbias-welches-thema-erhält-aufmerksamkeit">#</a></h2>
+<blockquote>
+<p><img loading="lazy" src="/restricted_topic_freq_guardian.png" alt="Topics over time in the Guardian"  />
+
+Themen im Zeitverlauf im Guardian</p>
+</blockquote>
+<blockquote>
+<p><img loading="lazy" src="/restricted_topics_overtime_jazeera.png" alt="Topics over time in Al Jazeera"  />
+
+Themen im Zeitverlauf in Al Jazeera</p>
+</blockquote>
+<p>Hier sehen wir, welcher Prozentsatz der Artikel jedes Jahr (mit dem allgemeinen Thema &ldquo;Fußballweltmeisterschaft Katar&rdquo;) den fünf beschriebenen Themen zugeordnet wurde.</p>
+<p>Ein wesentlicher Unterschied ist die Intensität und Langlebigkeit des Themas Korruption (blatter, bid, vote, ethic_commitee) im Guardian im Vergleich zu Al Jazeera. Wir könnten interpretieren, dass das Thema von den Redakteuren von Al Jazeera als weniger berichtenswert erachtet wurde.</p>
+<p>Eine wichtige Ähnlichkeit ist die Langlebigkeit und Intensität des Themas Arbeitnehmerrechte (worker, wage, amnesty) in beiden Zeitungen. Dies könnte darauf hindeuten, dass das Thema von beiden Zeitungen als wichtig erachtet wurde.</p>
+<blockquote>
+<p><img loading="lazy" src="/articles_published_by_source_and_year.png" alt="Articles published over time in the Guardian and Al Jazeera"  />
+
+Während kleinere Themen im Guardian häufiger auftauchen, liegt dies einfach an der höheren Anzahl von Artikeln im Guardian im Vergleich zu Al Jazeera. Wir können jedoch auch beobachten, dass der Guardian vor der Durchführung der Weltmeisterschaft viel mehr berichtet hat, während Al Jazeera während der Veranstaltung mehr zu berichten begann.</p>
+</blockquote>
+<h2 id="fazit">Fazit<a hidden class="anchor" aria-hidden="true" href="#fazit">#</a></h2>
+<p>Topic Modeling ist ein leistungsstarkes Werkzeug, um versteckte Muster und Themen in großen Textdatensätzen aufzudecken. Durch die Anwendung dieser Methode auf Nachrichtenartikel aus dem Guardian und Al Jazeera über die Fußballweltmeisterschaft in Katar haben wir wertvolle Einblicke in die Unterschiede in der Berichterstattung zwischen diesen beiden Medien gewonnen. Die Analyse zeigte Unterschiede in der Aufmerksamkeit, die verschiedenen Themen gewidmet wurde, und hob potenzielle Verzerrungen in der Nachrichtenberichterstattung hervor. Es gibt noch viele weitere Erkenntnisse zu gewinnen, zum Beispiel durch die Analyse des Tons der in den Artikeln verwendeten Sprache&hellip; Aber das ist eine Geschichte für einen anderen Tag!</p>
+<p>Ein anderer Bereich in dem Topic Modeling zum einsatz kommen kann ist zum Beispiel die Analyse von Produktrezensionen, wo ohne das lesen von tausenden von Rezensionen ein Überblick über die wichtigsten Themen und Meinungen gewonnen werden kann.</p>
+<h2 id="danksagung">Danksagung<a hidden class="anchor" aria-hidden="true" href="#danksagung">#</a></h2>
+<p>Diese Ergebnisse sind ein kleiner Teil eines Projekts, das an der Universität Leipzig zusammen mit <a href="https://www.linkedin.com/in/oliver-perle-08b58a23a/"><strong>Oliver Perle</strong></a> und <strong>Tarek Nassri</strong> durchgeführt wurde. Ich möchte ihnen für die nette Zusammenarbeit danken!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/de/tags/media-bias/">Media Bias</a></li>
+      <li><a href="/de/tags/qatar-world-cup/">Qatar World Cup</a></li>
+      <li><a href="/de/tags/data-analysis/">Data Analysis</a></li>
+      <li><a href="/de/tags/data-visualization/">Data Visualization</a></li>
+      <li><a href="/de/tags/topic-modeling/">Topic Modeling</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="/de/">Justus&#39; Seite</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

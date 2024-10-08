@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Justus&#39; Seite</title>
+    <link>/de/posts/</link>
+    <description>Recent content in Posts on Justus&#39; Seite</description>
+    <generator>Hugo -- 0.132.2</generator>
+    <language>de-DE</language>
+    <lastBuildDate>Sat, 17 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/de/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Topic Modeling: Eine Fallstudie zu Unterschieden in der Nachrichtenberichterstattung</title>
+      <link>/de/posts/media_bias_example/</link>
+      <pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>/de/posts/media_bias_example/</guid>
+      <description>Der 2022 Qatar World Cup war mehr als nur ein sportliches Spektakel; er entfachte eine globale Diskussion über Sport, Politik und Kultur. Um zu verstehen, wie verschiedene Medien dieses Ereignis darstellten, begeben wir uns auf eine faszinierende Reise durch Tausende von Artikeln, die zwischen 2010 und 2023 im Guardian und Al Jazeera veröffentlicht wurden. Unser Werkzeugkasten ist voll mit vielen Analysemethoden, aber heute konzentrieren wir uns auf die Welt der Topic Modeling.</description>
+    </item>
+    <item>
+      <title>Wer bin ich?</title>
+      <link>/de/posts/introduction/</link>
+      <pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>/de/posts/introduction/</guid>
+      <description>Akademische Laufbahn Hallo zusammen! Ich bin Justus und aktuell dabei, meinen Master in Data Science an der Universität Leipzig abzuschließen. Meine Faszination für die Welt der Daten begann bereits während meines Bachelorstudiums in Informatik an der Friedrich-Schiller-Universität Jena. Dort konnte ich nicht nur meine Programmierkenntnisse vertiefen, sondern auch ein solides Fundament im Bereich des maschinellen Lernens aufbauen.
+Mich begeistert vor allem das Potenzial von Data-Science-Methoden, verborgene Erkenntnisse und Werte in Daten aufzudecken.</description>
+    </item>
+  </channel>
+</rss>

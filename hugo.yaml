@@ -1,0 +1,43 @@
+baseURL: ""
+theme: "paper-mod"
+
+defaultContentLanguage: "en"
+
+params:
+  assets:
+    favicon: "assets/favicon.ico"
+  socialIcons:
+       - name: "linkedin"
+         url: "https://www.linkedin.com/in/justus-meyer-zu-bexten-0a9b53212/"
+       - name: "instagram"
+         url: "https://www.instagram.com/justusmzb/"
+       - name: "github"
+         url: "https://github.com/justusmzb"
+       - name: "email"
+         url: "mailto:spam56@mzb.de"
+languages:
+  en:
+    disabled: false
+    languageCode: "en-us"
+    languageDirection: "ltr"
+    languageName: "English"
+    title: "Justus' Page"
+    params:
+      homeInfoParams:
+        Title: "Welcome!"
+        Content: "This is the one and only Webpage of Justus Meyer zu Bexten :)
+        "
+  de:
+    disabled: false
+    languageCode: "de-DE"
+    languageDirection: "ltr"
+    languageName: "Deutsch"
+    title: "Justus' Seite"
+    params:
+      homeInfoParams:
+        Title: "Willkommen!"
+        Content: "Die einzig wahre Webseite von Justus Meyer zu Bexten :)"
+deployment:
+  targets:
+    - name: "production"
+      url: "s3://www.justusmzb.tech?region=eu-north-1"
