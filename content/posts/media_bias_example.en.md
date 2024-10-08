@@ -5,6 +5,7 @@ draft: false
 tags: ["media bias", "Qatar World Cup", "data analysis", "data visualization", Topic Modeling]
 author: "Justus Meyer zu Bexten, Oliver Perle, Tarek Nassri"
 ---
+
 The 2022 Qatar World Cup was more than just a sporting spectacle; it ignited a global conversation about sports, politics, and culture. To understand how different media outlets framed this event, we embark on a fascinating journey through thousands of articles published in the Guardian and Al Jazeera between 2010 and 2023.  Our toolbox is filled with multiple analytical methods, but today, we'll shine a spotlight on the insightful world of topic modeling.
 
 ## Finding key themes over thousands of articles
