@@ -2,6 +2,7 @@ baseURL: ""
 theme: "paper-mod"
 
 defaultContentLanguage: "en"
+sitemap: true
 
 params:
   assets:
@@ -25,8 +26,7 @@ languages:
     params:
       homeInfoParams:
         Title: "Welcome!"
-        Content: "This is the one and only Webpage of Justus Meyer zu Bexten :)
-        "
+        Content: "This is the Webpage of Justus Meyer zu Bexten. Exists mostly for my own entertainment :D"
   de:
     disabled: false
     languageCode: "de-DE"
@@ -36,8 +36,10 @@ languages:
     params:
       homeInfoParams:
         Title: "Willkommen!"
-        Content: "Die einzig wahre Webseite von Justus Meyer zu Bexten :)"
+        Content: "Die Webseite von Justus Meyer zu Bexten. Existiert vor allem zu meiner Unterhaltung :D"
 deployment:
   targets:
-    - name: "production"
+    - name: "aws-s3-tech"
       url: "s3://www.justusmzb.tech?region=eu-north-1"
+    - name: "aws-s3-de"
+      url: "s3://www.justusmzb.de?region=us-east-1"
