@@ -1,9 +1,9 @@
 ---
 draft: false
 date: 2024-11-01
-Title: 'Getting into a sweepstakes thanks to Webscraping'
+Title: 'Getting into a Sweepstakes thanks to Webscraping'
 author: 'Justus Meyer zu Bexten'
-tags: [Python, Web Scraping, E-Fellows, Gewinnspiel, OpenAI, KI]
+tags: [Python, Web Scraping, E-Fellows, Sweepstakes, OpenAI, AI]
 ---
 
 In 2024, E-Fellows.net, an online scholarship and career platform, hosted a sweepstakes on Halloween. In their collection of employer portraits, pages presenting various companies, they had hidden images of pumpkin 'baskets', containing candies.

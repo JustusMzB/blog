@@ -8,7 +8,7 @@ tags: [Crete, Travel, Nature, Beaches, Cities, Hiking]
 
 After spending almost half a year as a student on Crete, people have often asked me what you can do and what you should keep in mind. I am a person who, when traveling, values local culture and nature more than relaxation and attractions, so keep that in mind when reading my recommendations and warnings.
 
-## A rough summary
+## A rough Summary
 Crete can be divided into the more populated northeast, the very beautiful and beach-heavy south, the rather quiet and untouristic west and the mountainous inland.
 
 If you like beautiful cities and/or party tourism, you should look for accommodation in the northeast of the island. On the other hand, I find the beaches in the south of the island more beautiful and quieter, and you are also close to many beautiful natural spots, e.g. some gorges and very beautiful beaches. In the east there is not much tourist infrastructure, and I didn't find it as beautiful as the south. On the other hand, there is relatively little tourism here, the beaches are still very quiet even at the beginning of the season. Inland there are small villages, and above all beautiful mountains for hiking.

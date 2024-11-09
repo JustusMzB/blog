@@ -21,4 +21,5 @@ Wenn ich mal nicht mit Daten jongliere, bin ich meistens draußen unterwegs - be
 
 Ich freue mich immer, mich mit anderen Datenbegeisterten und Experten aus der ganzen Welt zu vernetzen. Meldet euch gerne, wenn ihr euch über Data Science, maschinelles Lernen oder andere spannende Themen austauschen möchtet!
 
-**Lasst uns gemeinsam neue Wege gehen und die Möglichkeiten der Datenwelt erkunden!**
+## Dieser Blog
+Ich führe diesen Blog vor allem zu meiner eigenen Unterhaltung. Aber ich führe ihn auch weil ich an sich gerne kommuniziere, was ich mit meiner Zeit so mache. Das kann gerade für Laien außerhalb meines Feldes etwas schwierig sein. Deshalb mag ich es, auch immer wieder einfachere Formulierungen und Intuitionen zu erstellen und zu teilen. Natürlich sind auch andere Veröffentlichungen dabei, einfach weil ich ab und zu gerne schreibe.

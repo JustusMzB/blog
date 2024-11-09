@@ -20,4 +20,5 @@ In my free time, I enjoy exploring the outdoors through hiking and cycling, pref
 
 I'm always eager to connect with fellow data enthusiasts and professionals from around the world. Feel free to reach out if you'd like to discuss data science, machine learning, or any other topics that spark your interest.
 
-**Let's connect and explore the possibilities together!**
+## This Blog
+I am running this blog mostly for my own entertainment. But I also run it because I like communicating to others what I spend my time on. This can be difficult for laymen outside my field. That's why I like to establish and share simple formulations and intuitions. Of course, there are also other publications, simply because I like to write from time to time.

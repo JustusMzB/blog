@@ -3,7 +3,7 @@ draft: false
 date: 2024-11-01
 Title: 'An einem Gewinnspiel teilnehmen dank Webscraping'
 author: 'Justus Meyer zu Bexten'
-tags: [Python, Web Scraping, E-Fellows, Sweepstakes, OpenAI, AI]
+tags: [Python, Web Scraping, E-Fellows, Gewinnspiel, OpenAI, KI]
 ---
 
 2024 veranstaltete E-Fellows.net, eine Online-Stipendien- und Karriereplattform, zu Halloween ein Gewinnspiel. In ihrer Sammlung von Arbeitgeberporträts, also Seiten, die verschiedene Unternehmen vorstellen, hatten sie Bilder von Kürbis-'Körben' mit Süßigkeiten versteckt. Um am Gewinnspiel teilzunehmen, hatte ich die folgenden Ziele:
@@ -12,6 +12,7 @@ tags: [Python, Web Scraping, E-Fellows, Sweepstakes, OpenAI, AI]
 - Die Namen der Unternehmen notieren, auf deren Seiten sie versteckt waren
 - Das Motiv auf der Verpackung der Süßigkeiten notieren
 - Die Anzahl der Süßigkeiten in jedem Korb notieren
+
 Da E-Fellows ein ziemlich großes Unternehmensportfolio hat, wollte ich nicht viel Zeit damit verbringen, Werbung zu lesen. Stattdessen beschloss ich, einen Web Scraper zu schreiben, der die Arbeit für mich erledigt, und dabei ein wenig meine Web-Scraping-Fähigkeiten zu üben.
 
 ## Einfach erklärt
