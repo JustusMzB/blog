@@ -1,6 +1,6 @@
 # My Blog/Website
 This is the Repo for my current Blog/Website.
-It is currently hosted at [justusmzb.tech](https://justusmzb.tech), using an S3 Bucket and Cloudfront Distribution.
+It is currently hosted at [justusmzb.tech](https://justusmzb.tech) and [justusmzb.de](https://justusmzb.de), using an S3 Bucket and Cloudfront Distribution.
 The Website is built using [Hugo](https://gohugo.io/), a static site generator, and the [PaperMod-Theme](https://github.com/adityatelange/hugo-PaperMod).
 
 ## How to run the Website locally
