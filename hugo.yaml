@@ -1,4 +1,4 @@
-baseURL: ""
+baseURL: "https://www.justusmzb.de/"
 theme: "paper-mod"
 
 defaultContentLanguage: "en"
@@ -39,7 +39,7 @@ languages:
         Content: "Die Webseite von Justus Meyer zu Bexten. Existiert vor allem zu meiner Unterhaltung :D"
 deployment:
   targets:
-    - name: "aws-s3-tech"
-      url: "s3://www.justusmzb.tech?region=eu-north-1"
     - name: "aws-s3-de"
       url: "s3://www.justusmzb.de?region=us-east-1"
+    - name: "aws-s3-tech"
+      url: "s3://www.justusmzb.tech?region=eu-north-1"
