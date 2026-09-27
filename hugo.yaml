@@ -11,8 +11,6 @@ params:
   socialIcons:
        - name: "linkedin"
          url: "https://www.linkedin.com/in/justus-meyer-zu-bexten-0a9b53212/"
-       - name: "instagram"
-         url: "https://www.instagram.com/justusmzb/"
        - name: "github"
          url: "https://github.com/justusmzb"
        - name: "email"
