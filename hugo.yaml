@@ -36,13 +36,6 @@ languages:
         imageTitle: "Justus Meyer zu Bexten"
         imageWidth: 150
         imageHeight: 150
-        buttons:
-          - name: "About"
-            url: "/about/"
-          - name: "Publications"
-            url: "/publications/"
-          - name: "Posts"
-            url: "/posts/"
     menu:
       main:
         - identifier: "about"
@@ -77,13 +70,6 @@ languages:
         subtitle: "Doktorand am [ScaDS.AI](https://scads.ai/) Leipzig · Deep Learning für Zeitreihen, Sprache & Neurowissenschaft"
         imageUrl: "profile.jpg"
         imageTitle: "Justus Meyer zu Bexten"
-        buttons:
-          - name: "Über mich"
-            url: "/de/about/"
-          - name: "Publikationen"
-            url: "/de/publications/"
-          - name: "Beiträge"
-            url: "/de/posts/"
     menu:
       main:
         - identifier: "about"
