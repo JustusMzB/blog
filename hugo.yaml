@@ -29,7 +29,7 @@ languages:
       profileMode:
         enabled: true
         title: "Justus Meyer zu Bexten"
-        subtitle: "PhD student at [ScaDS.AI](https://scads.ai/) Leipzig · Deep Learning for time series, language & neuroscience"
+        subtitle: "PhD student at [ScaDS.AI](https://scads.ai/) Leipzig & [MPI CBS](https://www.cbs.mpg.de/methods-and-development-groups/neural-data-science-and-statistical-computing) · Deep learning for neural data & time series"
         imageUrl: "profile.jpg"
         imageTitle: "Justus Meyer zu Bexten"
         imageWidth: 150
@@ -65,7 +65,7 @@ languages:
       profileMode:
         enabled: true
         title: "Justus Meyer zu Bexten"
-        subtitle: "Doktorand am [ScaDS.AI](https://scads.ai/) Leipzig · Deep Learning für Zeitreihen, Sprache & Neurowissenschaft"
+        subtitle: "Doktorand am [ScaDS.AI](https://scads.ai/) Leipzig & [MPI CBS](https://www.cbs.mpg.de/methoden-und-entwicklungsgruppen/neuronale-datenwissenschaft-und-statistisches-rechnen) · Deep Learning für neuronale Daten & Zeitreihen"
         imageUrl: "profile.jpg"
         imageTitle: "Justus Meyer zu Bexten"
     menu:
