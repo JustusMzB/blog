@@ -3,7 +3,7 @@ draft: true
 date: 2024-08-13
 Title: 'The Pulse of the News: Sentiment Analysis in Action'
 author: [Justus Meyer zu Bexten, Oliver Perle, Tarek Nassri]
-tags: [sentiment analysis, data analysis, data visualization]
+tags: [Data Science, Machine Learning, NLP, Media Analysis, Data Visualization, Qatar World Cup, Sentiment Analysis]
 ---
 
 In my previous post, we explored how Topic Modeling can help us uncover hidden themes in large collections of text. Today, we're going to dive into another exciting technique: Sentiment Analysis. If Topic Modeling is about understanding *what* is being talked about, Sentiment Analysis is about understanding *how* it's being talked about.

@@ -3,7 +3,7 @@ draft: false
 date: 2025-02-02
 title: 'Google zeigt keine Geburtstage mehr an – So kannst du sie wiederherstellen!'
 author: 'Justus Meyer zu Bexten'
-tags: [Google Kalender, Geburtstage, Automatisierung, Kontakte Export, Datenschutz, GDPR]
+tags: [Nebenprojekte, Automatisierung, JavaScript, Google, Datenschutz]
 description: 'Google zeigt aufgrund der DSGVO keine Kontakt-Geburtstage mehr im Kalender an. Erfahre, wie du mit einem einfachen Tool Geburtstags-Erinnerungen wiederherstellen kannst.'
 ---
 

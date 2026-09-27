@@ -3,7 +3,7 @@ draft: false
 date: 2024-11-01
 Title: 'An einem Gewinnspiel teilnehmen dank Webscraping'
 author: 'Justus Meyer zu Bexten'
-tags: [Python, Web Scraping, E-Fellows, Gewinnspiel, OpenAI, KI]
+tags: [Nebenprojekte, Automatisierung, Python, Web Scraping, Maschinelles Lernen]
 ---
 
 2024 veranstaltete E-Fellows.net, eine Online-Stipendien- und Karriereplattform, zu Halloween ein Gewinnspiel. In ihrer Sammlung von Arbeitgeberporträts, also Seiten, die verschiedene Unternehmen vorstellen, hatten sie Bilder von Kürbis-'Körben' mit Süßigkeiten versteckt. Um am Gewinnspiel teilzunehmen, hatte ich die folgenden Ziele:

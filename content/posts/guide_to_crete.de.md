@@ -3,7 +3,7 @@ draft: false
 date: 2024-10-08
 Title: 'Mein kleiner Kreta-Guide'
 author: 'Justus Meyer zu Bexten'
-tags: [Kreta, Reisen, Natur, Strände, Städte, Wandern]
+tags: [Persönliches, Reisen, Kreta, Studium, Wandern]
 ---
 
 Nachdem ich ein knappes halbes Jahr als Student auf Kreta verbracht habe, haben mich einige gefragt, was man dort so machen kann und beachten sollte. Ich bin eine Person die auf Reisen mehr Wert auf die lokale Kultur und Natur legt als auf Entspannung und Attraktionen, behaltet das also im Kopf wenn ihr jetzt meine Empfehlungen und Warnungen lest.

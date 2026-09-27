@@ -2,7 +2,7 @@
 title: "Topic Modelling: A Case Study of News Reporting Differences"
 date: 2024-08-17
 draft: false
-tags: ["media bias", "Qatar World Cup", "data analysis", "data visualization", Topic Modeling]
+tags: [Data Science, Machine Learning, NLP, Media Analysis, Data Visualization, Qatar World Cup, Topic Modeling]
 author: "Justus Meyer zu Bexten, Oliver Perle, Tarek Nassri"
 ---
 

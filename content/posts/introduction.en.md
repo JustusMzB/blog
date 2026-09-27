@@ -2,6 +2,7 @@
 date: 2024-08-15
 title: "Who am I?"
 draft: false
+tags: [Personal, Data Science, Student Life]
 ---
 
 ## Academic Journey

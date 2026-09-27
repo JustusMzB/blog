@@ -3,7 +3,7 @@ draft: false
 date: 2024-10-08
 Title: 'My small Guide to Crete'
 author: 'Justus Meyer zu Bexten'
-tags: [Crete, Travel, Nature, Beaches, Cities, Hiking]
+tags: [Personal, Travel, Crete, Student Life, Hiking]
 ---
 
 After spending almost half a year as a student on Crete, people have often asked me what you can do and what you should keep in mind. I am a person who, when traveling, values local culture and nature more than relaxation and attractions, so keep that in mind when reading my recommendations and warnings.

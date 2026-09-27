@@ -3,7 +3,7 @@ draft: true
 date: 2024-08-13
 Title: 'Die Stimmung hinter den Schlagzeilen: Sentimentanalyse im Einsatz'
 author: [Justus Meyer zu Bexten, Oliver Perle, Tarek Nassri]
-tags: [sentiment analysis, data analysis, data visualization]
+tags: [Data Science, Maschinelles Lernen, NLP, Medienanalyse, Datenvisualisierung, WM Katar 2022, Sentimentanalyse]
 ---
 
 In meinem letzten Beitrag haben wir uns angesehen, wie Topic Modeling uns helfen kann, die verborgenen Themen in großen Textmengen aufzudecken. Heute tauchen wir in eine weitere faszinierende Technik ein: die Sentimentanalyse. Wenn es beim Topic Modeling darum geht zu verstehen, *worüber* gesprochen wird, dann geht es bei der Sentimentanalyse darum zu verstehen, *wie* darüber gesprochen wird. Wir wollen also nicht nur die Themen, sondern auch die Emotionen und Einstellungen dahinter erfassen.

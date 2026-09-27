@@ -3,6 +3,7 @@ date: 2024-08-15
 title: "Wer bin ich?"
 draft: false
 # ShowToc: True
+tags: [Persönliches, Data Science, Studium]
 ---
 
 ## Akademische Laufbahn

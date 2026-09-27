@@ -3,7 +3,7 @@ draft: false
 date: 2025-02-02
 title: 'Restore Contact Birthdays in Google Calendar with This Simple Tool'
 author: 'Justus Meyer zu Bexten'
-tags: [Google Calendar, Birthday Reminders, GDPR, Contacts Export, Automation, JavaScript, Hugo]
+tags: [Side Projects, Automation, JavaScript, Google, Privacy]
 description: 'Google Calendar no longer displays contact birthdays due to GDPR regulations. Learn how to use a browser-based tool to restore recurring birthday reminders from your Google Contacts export.'
 ---
 
