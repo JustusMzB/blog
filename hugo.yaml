@@ -27,6 +27,33 @@ languages:
       homeInfoParams:
         Title: "Welcome!"
         Content: "This is the Webpage of Justus Meyer zu Bexten. Exists mostly for my own entertainment :D"
+      profileMode:
+        enabled: true
+        title: "Justus Meyer zu Bexten"
+        subtitle: "PhD student at [ScaDS.AI](https://scads.ai/) Leipzig · Deep Learning for time series, language & neuroscience"
+        imageUrl: "profile.jpg"
+        imageTitle: "Justus Meyer zu Bexten"
+        imageWidth: 150
+        imageHeight: 150
+        buttons:
+          - name: "About"
+            url: "/about/"
+          - name: "Posts"
+            url: "/posts/"
+    menu:
+      main:
+        - identifier: "about"
+          name: "About"
+          pageRef: "/about"
+          weight: 10
+        - identifier: "posts"
+          name: "Posts"
+          pageRef: "/posts"
+          weight: 20
+        - identifier: "tags"
+          name: "Tags"
+          pageRef: "/tags"
+          weight: 30
   de:
     disabled: false
     languageCode: "de-DE"
@@ -37,6 +64,31 @@ languages:
       homeInfoParams:
         Title: "Willkommen!"
         Content: "Die Webseite von Justus Meyer zu Bexten. Existiert vor allem zu meiner Unterhaltung :D"
+      profileMode:
+        enabled: true
+        title: "Justus Meyer zu Bexten"
+        subtitle: "Doktorand am [ScaDS.AI](https://scads.ai/) Leipzig · Deep Learning für Zeitreihen, Sprache & Neurowissenschaft"
+        imageUrl: "profile.jpg"
+        imageTitle: "Justus Meyer zu Bexten"
+        buttons:
+          - name: "Über mich"
+            url: "/de/about/"
+          - name: "Beiträge"
+            url: "/de/posts/"
+    menu:
+      main:
+        - identifier: "about"
+          name: "Über mich"
+          pageRef: "/about"
+          weight: 10
+        - identifier: "posts"
+          name: "Beiträge"
+          pageRef: "/posts"
+          weight: 20
+        - identifier: "tags"
+          name: "Tags"
+          pageRef: "/tags"
+          weight: 30
 deployment:
   targets:
     - name: "aws-s3-de"

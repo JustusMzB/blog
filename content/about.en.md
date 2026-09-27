@@ -1,4 +1,8 @@
 ---
+aliases: ["/posts/insight/"]
+ShowReadingTime: false
+ShowPostNavLinks: false
+ShowBreadCrumbs: false
 draft: false
 date: 2026-02-15
 title: "About Me"
