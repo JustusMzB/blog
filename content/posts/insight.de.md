@@ -1,12 +1,10 @@
 ---
-aliases: ["/de/posts/insight/"]
-ShowReadingTime: false
-ShowPostNavLinks: false
-ShowBreadCrumbs: false
+aliases: ["/about/"]
 draft: false
 date: 2026-02-15
 title: "Über mich"
 author: "Justus Meyer zu Bexten"
+tags: [Persönliches, Data Science]
 keywords: [Justus Meyer zu Bexten, Data Science, Deep Learning, Transformer, Zeitreihen, Sprache, Neurowissenschaften, internationale Community]
 # cover:
 #    image: '/Badge.jpg'

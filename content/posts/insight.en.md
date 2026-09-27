@@ -1,12 +1,10 @@
 ---
-aliases: ["/posts/insight/"]
-ShowReadingTime: false
-ShowPostNavLinks: false
-ShowBreadCrumbs: false
+aliases: ["/about/"]
 draft: false
 date: 2026-02-15
 title: "About Me"
 author: "Justus Meyer zu Bexten"
+tags: [Personal, Data Science]
 keywords: [Justus Meyer zu Bexten, Data Science, Deep Learning, Transformer, Time Series, Language, Neuroscience, International Community]
 ---
 Hello, I am **Justus Meyer zu Bexten**. Since my last introduction looked more like a corporate CV, here is a more compact non-exhaustive insight.

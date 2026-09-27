@@ -39,7 +39,7 @@ languages:
       main:
         - identifier: "about"
           name: "About"
-          pageRef: "/about"
+          pageRef: "/posts/insight"
           weight: 10
         - identifier: "publications"
           name: "Publications"
@@ -73,7 +73,7 @@ languages:
       main:
         - identifier: "about"
           name: "Über mich"
-          pageRef: "/about"
+          pageRef: "/posts/insight"
           weight: 10
         - identifier: "publications"
           name: "Publikationen"
