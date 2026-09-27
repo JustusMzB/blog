@@ -1,0 +1,32 @@
+{{- /* Renders one entry from data/publications.yaml. Context: the entry map. */ -}}
+{{- $me := site.Params.publicationsHighlightName | default "" -}}
+{{- $labels := dict "arxiv" "arXiv" "pdf" "PDF" "doi" "DOI" "code" "Code" "project" "Project" "slides" "Slides" "video" "Video" -}}
+{{- $order := slice "arxiv" "pdf" "doi" "code" "project" "slides" "video" -}}
+<article class="publication">
+  <h3 class="pub-title">
+    {{- with .links.arxiv | default .links.doi | default .links.pdf }}<a href="{{ . }}" rel="noopener" target="_blank">{{ end -}}
+    {{ .title }}
+    {{- if .links.arxiv | default .links.doi | default .links.pdf }}</a>{{ end -}}
+  </h3>
+  <p class="pub-authors">
+    {{- range $i, $a := .authors -}}
+      {{- if $i }}, {{ end -}}
+      {{- if eq $a $me }}<strong>{{ $a }}</strong>{{ else }}{{ $a }}{{ end -}}
+    {{- end -}}
+  </p>
+  <p class="pub-venue">{{ with .venue }}<em>{{ . }}</em>{{ end }}{{ with .year }}, {{ . }}{{ end }}</p>
+  {{- $links := .links | default dict }}
+  {{- if or $links .abstract .bibtex }}
+  <div class="pub-links">
+    {{- range $key := $order }}{{ with index $links $key }}
+    <a class="pub-link" href="{{ . }}" rel="noopener" target="_blank">{{ index $labels $key }}</a>
+    {{- end }}{{ end }}
+  </div>
+  {{- end }}
+  {{- with .abstract }}
+  <details class="pub-details"><summary>{{ i18n "pubAbstract" | default "Abstract" }}</summary><p>{{ . }}</p></details>
+  {{- end }}
+  {{- with .bibtex }}
+  <details class="pub-details"><summary>BibTeX</summary><pre><code>{{ . }}</code></pre></details>
+  {{- end }}
+</article>

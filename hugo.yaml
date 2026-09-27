@@ -5,6 +5,7 @@ defaultContentLanguage: "en"
 sitemap: true
 
 params:
+  publicationsHighlightName: "Justus Meyer zu Bexten"
   assets:
     favicon: "assets/favicon.ico"
   socialIcons:
@@ -38,6 +39,8 @@ languages:
         buttons:
           - name: "About"
             url: "/about/"
+          - name: "Publications"
+            url: "/publications/"
           - name: "Posts"
             url: "/posts/"
     menu:
@@ -46,6 +49,10 @@ languages:
           name: "About"
           pageRef: "/about"
           weight: 10
+        - identifier: "publications"
+          name: "Publications"
+          pageRef: "/publications"
+          weight: 15
         - identifier: "posts"
           name: "Posts"
           pageRef: "/posts"
@@ -73,6 +80,8 @@ languages:
         buttons:
           - name: "Über mich"
             url: "/de/about/"
+          - name: "Publikationen"
+            url: "/de/publications/"
           - name: "Beiträge"
             url: "/de/posts/"
     menu:
@@ -81,6 +90,10 @@ languages:
           name: "Über mich"
           pageRef: "/about"
           weight: 10
+        - identifier: "publications"
+          name: "Publikationen"
+          pageRef: "/publications"
+          weight: 15
         - identifier: "posts"
           name: "Beiträge"
           pageRef: "/posts"

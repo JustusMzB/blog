@@ -1,0 +1,6 @@
+- id: pubSelected
+  translation: "Selected Publications"
+- id: pubAll
+  translation: "All publications"
+- id: pubAbstract
+  translation: "Abstract"

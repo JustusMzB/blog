@@ -1,0 +1,6 @@
+{{- /* {{< publications >}} → all entries; {{< publications featured="true" >}} → featured only */ -}}
+{{- $pubs := sort (site.Data.publications | default slice) "date" "desc" -}}
+{{- if eq (.Get "featured") "true" }}{{ $pubs = where $pubs "featured" true }}{{ end -}}
+<div class="publications">
+{{- range $pubs }}{{ partial "publication.html" . }}{{ end -}}
+</div>

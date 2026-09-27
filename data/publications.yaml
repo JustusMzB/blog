@@ -1,0 +1,44 @@
+# Publications — shown on /publications/ (newest first) and, if featured: true, on the homepage.
+# Your own name (params.publicationsHighlightName in hugo.yaml) is printed in bold.
+#
+# Fields: title, authors (list), venue, year, date (YYYY-MM-DD, used for sorting), featured (bool),
+#         links: { arxiv, pdf, doi, code, project, slides, video } — all optional,
+#         abstract (optional, shown collapsed), bibtex (optional, shown collapsed)
+
+- title: "From Clever Hans to Scientific Discovery: Interpreting EEG Foundational Transformers with LRP"
+  authors:
+    - Justus Meyer zu Bexten
+    - Nico Scherf
+    - Bogdan Franczyk
+    - Simon M. Hofmann
+  venue: arXiv preprint
+  year: 2026
+  date: 2026-05-01
+  featured: true
+  links:
+    arxiv: https://arxiv.org/abs/2605.11885
+    pdf: https://arxiv.org/pdf/2605.11885
+    doi: https://doi.org/10.48550/arXiv.2605.11885
+  abstract: >-
+    Emerging foundation models (FMs) in electroencephalography (EEG) promise a path to scale deep learning
+    in diagnostics and brain-computer interfaces despite data scarcity, yet their opaque nature remains a
+    barrier to wider adoption. We investigate attention-aware Layer-wise relevance propagation (LRP) as a
+    post-hoc attribution method for EEG-FMs, extending LRP's use on convolutional neural network (CNN)-based
+    EEG models to the Transformer architectures that current FMs are based on. We find that LRP can both
+    verify EEG-FM decisions and surface novel, biologically plausible hypotheses from them. In motor imagery,
+    it unmasks "Clever Hans" behavior where models prioritize task-correlated ocular signals over the
+    intended motor correlates. In a naturalistic paradigm for affect prediction, it reveals a recurring
+    reliance on a central electrode cluster, suggesting a candidate sensorimotor signature of arousal.
+    Though heatmap interpretation remains ambiguous in this complex domain, the results position LRP as a
+    tool for both verification and exploration of EEG-FMs, a role that will grow in both importance and
+    discovery potential as the underlying models mature.
+  bibtex: |-
+    @misc{meyerzubexten2026cleverhans,
+      title         = {From Clever Hans to Scientific Discovery: Interpreting EEG Foundational Transformers with LRP},
+      author        = {Meyer zu Bexten, Justus and Scherf, Nico and Franczyk, Bogdan and Hofmann, Simon M.},
+      year          = {2026},
+      eprint        = {2605.11885},
+      archivePrefix = {arXiv},
+      doi           = {10.48550/arXiv.2605.11885},
+      url           = {https://arxiv.org/abs/2605.11885}
+    }
