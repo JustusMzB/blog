@@ -4,3 +4,7 @@
   translation: "Alle Publikationen"
 - id: pubAbstract
   translation: "Zusammenfassung"
+- id: postsRecent
+  translation: "Neueste Beiträge"
+- id: postsAll
+  translation: "Alle Beiträge"

@@ -66,6 +66,28 @@
             <a class="pub-all" href="{{ "publications/" | relLangURL }}">{{ i18n "pubAll" | default "All publications" }} →</a>
         </section>
         {{- end }}
+
+        {{- /* Local addition: recent posts */}}
+        {{- $posts := where site.RegularPages "Section" "posts" }}
+        {{- with first (site.Params.homeRecentPosts | default 5) $posts.ByDate.Reverse }}
+        <section class="recent-posts">
+            <h2>{{ i18n "postsRecent" | default "Recent Posts" }}</h2>
+            <ul class="recent-posts-list">
+            {{- range . }}
+                <li>
+                    <a class="recent-post" href="{{ .RelPermalink }}">
+                        <span class="recent-post-title">{{ .Title }}</span>
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time>
+                    </a>
+                    {{- with .Description | default (.Summary | plainify | truncate 140) }}
+                    <p class="recent-post-summary">{{ . }}</p>
+                    {{- end }}
+                </li>
+            {{- end }}
+            </ul>
+            <a class="pub-all" href="{{ "posts/" | relLangURL }}">{{ i18n "postsAll" | default "All posts" }} →</a>
+        </section>
+        {{- end }}
     </div>
     {{- end}}
 </div>

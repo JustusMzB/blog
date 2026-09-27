@@ -22,3 +22,16 @@
 .featured-publications { width: 100%; max-width: 720px; margin-top: 2.5rem; }
 .featured-publications h2 { font-size: 1.3rem; margin-bottom: 1rem; }
 .featured-publications .pub-all { display: inline-block; margin-top: 1rem; font-size: .95rem; }
+
+/* Homepage: recent posts */
+.recent-posts { width: 100%; max-width: 720px; margin-top: 2.5rem; text-align: left; }
+.recent-posts h2 { font-size: 1.3rem; margin-bottom: 1rem; text-align: center; }
+.recent-posts-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.recent-posts-list li { padding: .8rem .25rem; border-bottom: 1px solid var(--border); }
+.recent-post { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.recent-post-title { font-weight: 600; color: var(--primary); }
+.recent-post:hover .recent-post-title { text-decoration: underline; }
+.recent-post time { flex-shrink: 0; font-size: .85rem; color: var(--secondary); }
+.recent-post-summary { margin: .25rem 0 0; font-size: .9rem; color: var(--secondary); line-height: 1.5; }
+.recent-posts .pub-all { display: block; text-align: center; margin-top: 1rem; font-size: .95rem; }
+@media (max-width: 500px) { .recent-post { flex-direction: column; gap: .15rem; } }

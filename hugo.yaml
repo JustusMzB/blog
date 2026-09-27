@@ -6,6 +6,7 @@ sitemap: true
 
 params:
   publicationsHighlightName: "Justus Meyer zu Bexten"
+  homeRecentPosts: 5   # number of posts listed on the homepage
   assets:
     favicon: "assets/favicon.ico"
   socialIcons:
