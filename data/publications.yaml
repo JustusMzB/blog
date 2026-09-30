@@ -5,6 +5,53 @@
 #         links: { arxiv, pdf, doi, code, project, slides, video } — all optional,
 #         abstract (optional, shown collapsed), bibtex (optional, shown collapsed)
 
+- title: "Representational and Functional Robustness to Electrode Montages in EEG Foundation Models"
+  authors:
+    - Jakob Steglich
+    - Justus Meyer zu Bexten
+    - Shakiba Moradi
+    - Laure Ciernik
+    - Simon M. Hofmann
+    - Mina Jamshidi Idaji
+  venue: arXiv preprint
+  year: 2026
+  date: 2026-09-28
+  featured: true
+  links:
+    arxiv: https://arxiv.org/abs/2609.36288
+    pdf: https://arxiv.org/pdf/2609.36288
+    doi: https://doi.org/10.48550/arXiv.2609.36288
+  abstract: >-
+    EEG foundation models (EEG-FMs) are intended to generalize across different datasets by learning
+    representations that, ideally, are invariant to dataset-specific EEG configurations such as electrode
+    montages. However, EEG-FMs that accept different montages as input do not guarantee that representations
+    and predictions remain stable across different electrode configurations, especially outside the training
+    setting. In this work, we investigate the effects of different electrode montages through a joint
+    functional and representational analysis of four EEG foundation models selected to span distinct
+    montage-handling designs. We evaluate embeddings on cross-subject resting-state eyes-open/closed and
+    within-subject motor-imagery classification under spatially informed channel reduction. Functional
+    robustness is tested through the generalizability of linear probes across channel counts, while
+    representational robustness is assessed through within-subject similarity and preservation of
+    between-subject geometry. The four models show distinct robustness profiles, and the two axes dissociate:
+    large changes in embedding similarity need not come with comparable probe degradation, and stable
+    embeddings can still lose downstream performance. Comparing two readouts of the same encoder further
+    shows that aggregation, not the encoder alone, determines functional robustness: pooling into
+    anatomically aligned regions degrades less than a learned global readout, despite being
+    montage-invariant by construction. Montage robustness is therefore a joint property of the encoder and
+    its aggregation, and characterizing it requires both a representational and a functional axis. Input
+    compatibility alone is evidence for neither.
+  bibtex: |-
+    @misc{steglich2026montage,
+      title         = {Representational and Functional Robustness to Electrode Montages in EEG Foundation Models},
+      author        = {Steglich, Jakob and Meyer zu Bexten, Justus and Moradi, Shakiba and Ciernik, Laure and Hofmann, Simon M. and Jamshidi Idaji, Mina},
+      year          = {2026},
+      eprint        = {2609.36288},
+      archivePrefix = {arXiv},
+      primaryClass  = {cs.LG},
+      doi           = {10.48550/arXiv.2609.36288},
+      url           = {https://arxiv.org/abs/2609.36288}
+    }
+
 - title: "From Clever Hans to Scientific Discovery: Interpreting EEG Foundational Transformers with LRP"
   authors:
     - Justus Meyer zu Bexten
