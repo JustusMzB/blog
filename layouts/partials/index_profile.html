@@ -1,4 +1,4 @@
-{{- /* Override of PaperMod's index_profile.html (theme commit 3bb0ca2) — adds the featured-publications section. */ -}}
+{{- /* Override of PaperMod's index_profile.html (theme commit 3bb0ca2) — adds the featured-publications section and renders the profile image at 3x / q90 for high-DPI screens. */ -}}
 <div class="profile">
     {{- with site.Params.profileMode }}
     <div class="profile_inner">
@@ -14,14 +14,14 @@
             {{- end -}}
             {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
             {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
-                {{- if (not (and (not .imageHeight) (not .imageWidth))) }}
-                    {{- $img = $img.Resize (printf "%dx%d" .imageWidth .imageHeight) }}
+                {{- if and .imageHeight .imageWidth }}
+                    {{- $img = $img.Fill (printf "%dx%d q90" (mul .imageWidth 3) (mul .imageHeight 3)) }}
                 {{- else if .imageHeight }}
-                    {{- $img = $img.Resize (printf "x%d" .imageHeight) }}
+                    {{- $img = $img.Resize (printf "x%d q90" (mul .imageHeight 3)) }}
                 {{ else if .imageWidth }}
-                    {{- $img = $img.Resize (printf "%dx" .imageWidth) }}
+                    {{- $img = $img.Resize (printf "%dx q90" (mul .imageWidth 3)) }}
                 {{ else }}
-                    {{- $img = $img.Resize "150x150" }}
+                    {{- $img = $img.Fill "450x450 q90" }}
                 {{- end }}
             {{- end }}
             <img draggable="false" src="{{ $img.Permalink }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"

@@ -22,7 +22,7 @@ languages:
     languageCode: "en-us"
     languageDirection: "ltr"
     languageName: "English"
-    title: "Justus' Page"
+    title: "JustusMzB"
     params:
       homeInfoParams:
         Title: "Welcome!"
@@ -58,7 +58,7 @@ languages:
     languageCode: "de-DE"
     languageDirection: "ltr"
     languageName: "Deutsch"
-    title: "Justus' Seite"
+    title: "JustusMzB"
     params:
       homeInfoParams:
         Title: "Willkommen!"
