@@ -1,0 +1,17 @@
+{{- /* Redirect pages → /go/<slug>/.
+       Every project in data/nips.yaml with a `go` number gets /go/<go>/ → /nips/<id>/;
+       data/shortlinks.yaml adds more slugs and overrides these.
+       build.render must be set explicitly: a partial build map leaves it off (Hugo 0.170). */ -}}
+{{- $links := dict -}}
+{{- range site.Data.nips }}{{ if and .go .id }}{{ $links = merge $links (dict (printf "%v" .go) (printf "/nips/%s/" .id)) }}{{ end }}{{ end -}}
+{{- $links = merge $links (site.Data.shortlinks | default dict) -}}
+{{- range $slug, $target := $links }}
+  {{- $.AddPage (dict
+      "path" $slug
+      "kind" "page"
+      "title" (printf "→ %s" $target)
+      "params" (dict "target" $target)
+      "sitemap" (dict "disable" true)
+      "build" (dict "list" "never" "render" "always")
+  ) }}
+{{- end }}

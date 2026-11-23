@@ -1,0 +1,13 @@
+{{- /* One page per project in data/nips.yaml → /nips/<id>/ (shortlink /go/<id>/ is added in content/go/).
+       build.render must be set explicitly: a partial build map leaves it off (Hugo 0.170). */ -}}
+{{- range $p := site.Data.nips }}
+  {{- with $p.id }}
+  {{- $.AddPage (dict
+      "path" .
+      "kind" "page"
+      "title" $p.title
+      "params" (dict "project" . "robotsNoIndex" true)
+      "build" (dict "list" "never" "render" "always")
+  ) }}
+  {{- end }}
+{{- end }}

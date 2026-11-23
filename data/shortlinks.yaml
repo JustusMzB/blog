@@ -1,0 +1,6 @@
+# URL shortener: each entry becomes https://www.justusmzb.de/go/<slug>/ → target.
+# Projects in data/nips.yaml get /go/<go>/ → /nips/<id>/ automatically (their `go` field);
+# entries here add extra slugs or override those. Targets: site paths or full URLs.
+# Slugs: lowercase letters, digits, dashes.
+
+nips: /nips/

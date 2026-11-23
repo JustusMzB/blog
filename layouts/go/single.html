@@ -1,0 +1,16 @@
+{{- /* Shortlink redirect page (no baseof). Target from data/shortlinks.yaml via content/go/_content.gotmpl. */ -}}
+{{- $t := .Params.target -}}
+{{- if hasPrefix $t "/" }}{{ $t = $t | absURL }}{{ end -}}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="{{ $t }}">
+  <meta http-equiv="refresh" content="0; url={{ $t }}">
+  <script>location.replace({{ $t }});</script>
+</head>
+<body><p>Redirecting to <a href="{{ $t }}">{{ $t }}</a>…</p></body>
+</html>

@@ -1,0 +1,21 @@
+# NeurIPS landing page (/nips/) — one block per project: title + buttons.
+#   id     page slug → /nips/<id>/ (and anchor /nips/#<id> on the overview)
+#   go     shortlink number, QUOTED → /go/<go>/ redirects to /nips/<id>/. Never reuse or
+#          change a number once its QR code is printed.
+#   pub    exact title in data/publications.yaml → borrows its arXiv link
+#   links  { arxiv, demo, code } — empty or missing ones are skipped
+
+- id: lrp
+  go: "01"
+  pub: "From Clever Hans to Scientific Discovery: Interpreting EEG Foundational Transformers with LRP"
+  title: "Interpreting EEG Foundation Transformers with LRP"
+  links:
+    demo: https://justusmzb-labram-attnlrp-physiomi.static.hf.space/
+    code: ""   # TODO
+
+- id: montage
+  go: "02"
+  pub: "Representational and Functional Robustness to Electrode Montages in EEG Foundation Models"
+  title: "Montage Robustness in EEG Foundation Models"
+  links:
+    code: ""   # TODO
