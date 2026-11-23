@@ -1,6 +1,10 @@
-# URL shortener: each entry becomes https://www.justusmzb.de/go/<slug>/ → target.
-# Projects in data/nips.yaml get /go/<go>/ → /nips/<id>/ automatically (their `go` field);
-# entries here add extra slugs or override those. Targets: site paths or full URLs.
-# Slugs: lowercase letters, digits, dashes.
+# URL shortener — the single source of truth: each entry becomes
+#   https://www.justusmzb.de/go/<code>/  →  <destination>
+# Destinations: site paths ("/nips/lrp/") or full URLs ("https://…").
+# Quote the codes ("01", not 01 — YAML would read that as the number 1).
+# Never reuse or repoint a code whose QR code is printed unless that's intended.
 
-nips: /nips/
+"nips": /nips/
+"01": /nips/lrp/
+"02": /nips/montage/
+"03": https://huggingface.co/spaces/JustusMzB/labram-attnlrp-physiomi

@@ -52,19 +52,15 @@
   box-shadow: var(--n-shadow);
   -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
 }
-.nips-panel::before {
-  content: ""; position: absolute; inset: 0 auto 0 0; width: 4px;
-  background: linear-gradient(180deg, var(--n-accent-1), var(--n-accent-2));
-}
 .nips-card {
   position: relative;
-  padding: 1.35rem 1.35rem 1.35rem 1.6rem;
+  padding: 1.35rem;
   scroll-margin-top: 1rem;
   animation: nips-in .5s cubic-bezier(.2, .7, .2, 1) both;
   animation-delay: calc(var(--i, 0) * 90ms);
 }
 .nips-card + .nips-card::before {   /* separator */
-  content: ""; position: absolute; top: 0; left: 1.6rem; right: 1.35rem; height: 1px;
+  content: ""; position: absolute; top: 0; left: 1.35rem; right: 1.35rem; height: 1px;
   background: linear-gradient(90deg, var(--n-card-border), var(--n-sep) 30%, var(--n-sep) 70%, var(--n-card-border));
 }
 .nips-card:target { background: var(--n-chip); }

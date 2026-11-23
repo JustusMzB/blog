@@ -3,8 +3,11 @@
 {{- $page := .page -}}
 {{- $projects := site.Data.nips -}}
 {{- with .only }}{{ $projects = where site.Data.nips "id" . }}{{ end -}}
-{{- $labels := dict "arxiv" "arXiv" "demo" "Demo" "code" "GitHub" -}}
+{{- /* Button styles. A `publication` link is shown as "arxiv" (red) for arxiv.org, else as neutral "paper". */ -}}
+{{- $labels := dict "demo" "Demo" "arxiv" "arXiv" "paper" "Paper" "code" "GitHub" -}}
+{{- $doc := `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>` -}}
 {{- $icons := dict
+  "paper" $doc
   "arxiv" `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>`
   "demo"  `<span class="nips-emoji" aria-hidden="true">🤗</span>`
   "code"  `<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>`
@@ -18,14 +21,13 @@
   <main class="nips">
     <div class="nips-panel">
     {{- range $i, $p := $projects }}
-    {{- $pub := dict -}}
-    {{- with .pub }}{{ with where (site.Data.publications | default slice) "title" . }}{{ $pub = index . 0 }}{{ end }}{{ end -}}
-    {{- $links := merge (dict "arxiv" ($pub.links.arxiv | default "")) (.links | default dict) }}
+    {{- $links := .links | default dict }}
     <section class="nips-card"{{ with .id }} id="{{ . }}"{{ end }} style="--i: {{ $i }}">
       <h2>{{ .title }}</h2>
       <div class="nips-links">
-        {{- range $k := slice "demo" "arxiv" "code" }}{{ with index $links $k }}
-        <a class="nips-btn nips-btn--{{ $k }}" href="{{ . }}" rel="noopener" target="_blank">{{ index $icons $k | safeHTML }}<span>{{ index $labels $k }}</span></a>
+        {{- range $k := slice "demo" "publication" "code" }}{{ with index $links $k }}
+        {{- $s := $k }}{{ if eq $k "publication" }}{{ $s = cond (strings.Contains . "arxiv.org") "arxiv" "paper" }}{{ end }}
+        <a class="nips-btn nips-btn--{{ $s }}" href="{{ . }}" rel="noopener" target="_blank">{{ index $icons $s | safeHTML }}<span>{{ index $labels $s }}</span></a>
         {{- end }}{{ end }}
       </div>
     </section>

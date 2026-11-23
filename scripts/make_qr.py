@@ -2,8 +2,7 @@
 # requires-python = ">=3.10"
 # dependencies = ["segno>=1.6", "pyyaml>=6"]
 # ///
-"""Generate print-ready QR codes for every shortlink: each project's `go` number in
-data/nips.yaml (→ /nips/<id>/) plus every slug in data/shortlinks.yaml (which overrides).
+"""Generate print-ready QR codes for every shortlink in data/shortlinks.yaml.
 
     uv run scripts/make_qr.py            # all slugs → qr/<slug>.svg + .png
     uv run scripts/make_qr.py 01 02   # only these
@@ -23,9 +22,7 @@ OUT = ROOT / "qr"
 
 
 def main(slugs: list[str]) -> None:
-    projects = yaml.safe_load((ROOT / "data" / "nips.yaml").read_text()) or []
-    links = {str(p["go"]): f"/nips/{p['id']}/" for p in projects if p.get("go") and p.get("id")}
-    links |= yaml.safe_load((ROOT / "data" / "shortlinks.yaml").read_text()) or {}
+    links = {str(k): v for k, v in (yaml.safe_load((ROOT / "data" / "shortlinks.yaml").read_text()) or {}).items()}
     unknown = set(slugs) - set(links)
     if unknown:
         sys.exit(f"unknown slug(s): {', '.join(sorted(unknown))}")
