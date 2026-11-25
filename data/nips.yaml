@@ -12,7 +12,7 @@
   links:
     demo: https://justusmzb-labram-attnlrp-physiomi.static.hf.space/
     publication: https://arxiv.org/abs/2605.11885
-    code: ""   # TODO
+    code: https://github.com/JustusMzB/interpreting_eeg_foundational_transformers_with_lrp
 
 - id: montage
   title: "Montage Robustness in EEG Foundation Models"
